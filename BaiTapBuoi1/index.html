@@ -26,6 +26,7 @@
     <p><i>ES2025 tập trung vào iterator, set, và async - không phải pipeline operator như nhiều bài viết nhầm</i></p>
     <p>Node.js 22+ và các browser Chrome/Firefox/Safari release sau tháng 6/2025 đã support native. Không cần polyfill cho production nếu bạn target môi trường đủ mới.</p>
     <p>Pipeline operator (<code class="highlight">&#9654;</code>) và Temporal API? Vẫn đang ở Stage 2-3. Dùng Luxon hoặc date-fns cho date/time là lựa chọn thực tế nhất hiện tại.</p>
+    
     <hr>
     <h2 style="color: #292929;">Iterator Helpers và Set Methods - dùng thật trong dự án thế nào?</h2>
     <p>Hai tính năng này mình thấy practical nhất trong ES2025 cho daily work.</p>
@@ -64,7 +65,63 @@
     const newMessages = socketMessages.difference(cachedMessages);
     </code></pre>
     <p>Trước đây bạn phải tự viết <code class="highlight">[...setA].filter(x => setB.has(x))</code>. Dài, khó đọc, dễ bug. Set methods native clean hơn nhiều và chain được với nhau.</p>
+    
     <hr>
+    <h2 style="color: #292929;">Promise.try() và async/await patterns nâng cao</h2>
+    <p>Đây là tính năng mình mong nhất trong ES2025. Vấn đề cũ:</p>
+    <pre><code class="language-javascript">
+    // Bug tiềm ẩn: nếu getUser() throw sync, lỗi không bị catch!
+    async function loadProfile(id) {
+    return getUser(id) // sync function, throw không bị catch bởi .catch()
+        .then(user => fetchDetails(user));
+    }
+    </code></pre>
+    <p><code class="highlight">Promise.try()</code> fix đúng điểm này:</p>
+    <pre><code class="language-script">
+    // Promise.try wrap cả sync throw vào promise chain
+    Promise.try(() => getUser(id))
+    .then(user => fetchDetails(user))
+    .catch(err => handleError(err)); // bắt được cả sync lẫn async error
+    </code></pre>
+    <p><strong>Pattern mạnh hơn: kết hợp với async generators cho streaming data</strong></p>
+    <pre><code class="language-javascript">
+    async function* streamDashboardData(endpoint) {
+    const response = await Promise.try(() => fetch(endpoint));
+    const reader = response.body.getReader();
+    
+    while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        
+        // Dùng Iterator Helpers để transform ngay trên stream
+        yield* Iterator.from([value])
+        .map(chunk => JSON.parse(new TextDecoder().decode(chunk)))
+        .filter(data => data.type === 'update');
+    }
+    }
+
+    // Consume trong component
+    for await (const update of streamDashboardData('/api/stream')) {
+    updateUI(update);
+    }
+    </code></pre>
+    <img src="https://files.f8.edu.vn/f8-prod/blog_posts/13485/section_2_260323080728_69c09250954f10.74211997.png" alt="Promise.try + async generator = xử lý stream data không bị miss error ở bất kỳ điểm nào" width="800px">
+    <p><strong>Top-level await</strong> (ES2022 nhưng hay dùng chung với ES2025 patterns) cũng clean hơn khi kết hợp Set ops:</p>
+    <pre><code class="language-javascript">
+    // module.js - init một lần, share across module
+    const initialPermissions = new Set(await fetchUserPermissions());
+    const cachedPermissions = new Set(JSON.parse(localStorage.getItem('perms') ?? '[]'));
+
+    // Merge, loại bỏ duplicate
+    export const permissions = initialPermissions.union(cachedPermissions);
+    </code></pre>
+    <p>Nếu bạn muốn nền tảng JavaScript vững để apply những patterns này ngay, khóa JavaScript Pro cover sâu về async/await, closures, và cách JS engine thực sự hoạt động - đủ để đọc ES2025 spec mà hiểu rõ tại sao.</p>
+
+    <hr>
+    <h2 style="color: #292929;">RxJS vs Zustand - chọn gì cho realtime web app?</h2>
+    <p>Mình sẽ không nói "cái nào tốt hơn" vì câu trả lời phụ thuộc vào loại app bạn đang build.</p>
+    <p><strong>RxJS</strong> &#10088;<a href="https://rxjs.dev/">RxJS docs</a> &#10089; là reactive programming library với Observable - phù hợp khi data flow của bạn phức tạp, nhiều nguồn, cần backpressure hay timing control:</p>
+
 
 
 
