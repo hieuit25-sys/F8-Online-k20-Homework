@@ -6,6 +6,10 @@ body{
     background-color: #c9fffc;
 }
 
+.link-cam{
+    color: #f05123;
+}
+
 .ban-so-sanh-thuc-te{
     width: 80%;
     border-collapse: collapse;
@@ -15,4 +19,21 @@ body{
     border: 1px solid black;
     padding: 8px;
     text-align: left;
+}
+
+.kien-truc{
+    background-color: #c9fffc;
+}
+
+.PostsWithSameAuthor-module__heading___DZmFC{
+    font-weight: bold;
+}
+
+.bai-dang-cung-tac-gia{
+    text-decoration: none;
+    color: #292929;
+}
+
+.bai-dang-cung-tac-gia:hover{
+    text-decoration: underline;
 }

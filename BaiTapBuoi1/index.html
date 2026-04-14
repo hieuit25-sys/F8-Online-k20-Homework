@@ -120,7 +120,7 @@
     <hr>
     <h2 style="color: #292929;">RxJS vs Zustand - chọn gì cho realtime web app?</h2>
     <p>Mình sẽ không nói "cái nào tốt hơn" vì câu trả lời phụ thuộc vào loại app bạn đang build.</p>
-    <p><strong>RxJS</strong> &#10088;<a href="https://rxjs.dev/">RxJS docs</a> &#10089; là reactive programming library với Observable - phù hợp khi data flow của bạn phức tạp, nhiều nguồn, cần backpressure hay timing control:</p>
+    <p><strong>RxJS</strong> &#10088;<a class="link-cam" href="https://rxjs.dev/">RxJS docs</a>&#10089; là reactive programming library với Observable - phù hợp khi data flow của bạn phức tạp, nhiều nguồn, cần backpressure hay timing control:</p>
     <pre><code class="language-javascript">
     import { fromEvent, Subject } from 'rxjs';
     import { debounceTime, scan, filter } from 'rxjs/operators';
@@ -136,7 +136,7 @@
 
     liveData$.subscribe(messages => updateDashboard(messages));
     </code></pre>
-    <p><strong>Zustand</strong> &#10088;<a href="https://github.com/pmndrs/zustand">Zustand GitHub</a> &#10089; đi theo hướng ngược lại - minimal, hooks-based, không boilerplate:</p>
+    <p><strong>Zustand</strong> &#10088;<a class="link-cam" class="link-cam" href="https://github.com/pmndrs/zustand">Zustand GitHub</a>&#10089; đi theo hướng ngược lại - minimal, hooks-based, không boilerplate:</p>
     <pre><code class="language-javascript">
     import { create } from 'zustand';
 
@@ -189,8 +189,8 @@
         </tr>
         <tr>
             <td>ES2025 synergy</td>
-            <td><pre><code class="highlight">Iterator.from(observable)</code></pre></td>
-            <td><pre><code class="highlight">Promise.try</code></pre> trong actions</td>
+            <td><code class="highlight">Iterator.from(observable)</code></td>
+            <td><code class="highlight">Promise.try</code> trong actions</td>
         </tr>
         <tr>
             <td>TypeScript</td>
@@ -198,9 +198,85 @@
             <td>Rất tốt (generics cải thiện v5+)</td>
         </tr>
     </table>
+    <p>Cho hầu hết React app Việt Nam (dashboard, e-commerce, admin panel) - Zustand là đủ và ít đau đầu hơn. RxJS chỉ worth it khi bạn xây multiplayer game, collaborative editor, hoặc financial live feed cần control timing cực chính xác.</p>
+    <p>Nếu bạn đang build với ReactJS và chưa rõ cách quản lý state từ cơ bản, khóa <a class="link-cam" class="link-cam" href="https://f8.edu.vn/reactjs">Xây Dựng Website với ReactJS</a> sẽ giúp bạn hiểu đúng từ component state đến context trước khi nhảy vào Zustand.</p>
 
+    <hr>
+    <h2 style="color: #292929;">Xây realtime dashboard với ES2025 + Zustand: ví dụ thực tế</h2>
+    <p>Mình sẽ ghép tất cả những gì đã nói vào một mini case study: realtime stock price dashboard nhận data qua WebSocket.</p>
+    <p>Download file demo đầy đủ tại đây: <a class="link-cam" href="https://files.f8.edu.vn/f8-prod/blog_posts/13485/realtime-dashboard-es2025.html" target="_blank" rel="noopener noreferrer nofollow">Tải file demo Realtime Dashboard</a></p>
+    <p><strong>Kiến trúc:</strong></p>
+    <p>
+        <pre><code class="kien-truc">
+        WebSocket server
+            ↓
+        Zustand store (ES2025 Promise.try + Set dedup)
+            ↓
+        Iterator Helpers (filter/transform)
+            ↓
+        React components (subscribe minimal)
+        </code></pre>
+    </p>
+    <p><strong>Store với ES2025 patterns:</strong></p>
+    <pre><code class="language-javascript">
+    import { create } from 'zustand';
 
+    const useStockStore = create((set, get) => ({
+    prices: new Map(), // symbol -> latest price
+    symbols: new Set(), // active symbols
+    
+    subscribeToSymbols: async (newSymbols) => {
+        const current = get().symbols;
+        // Set union - không duplicate
+        const updated = current.union(new Set(newSymbols));
+        set({ symbols: updated });
+        
+        // Promise.try bắt cả sync error từ WebSocket init
+        await Promise.try(async () => {
+        const ws = new WebSocket(`wss://api/stocks?symbols=${[...updated].join(',')}`);
+        
+        ws.onmessage = (e) => {
+            const { symbol, price } = JSON.parse(e.data);
+            set(state => ({
+            prices: new Map(state.prices).set(symbol, price)
+            }));
+        };
+        });
+    },
+    
+    // Iterator Helpers: lấy top 10 cổ phiếu tăng nhiều nhất
+    getTopGainers: (baseline) => {
+        return Iterator.from(get().prices.entries())
+        .filter(([, price]) => price > (baseline.get(symbol) ?? 0))
+        .map(([symbol, price]) => ({ symbol, price }))
+        .take(10)
+        .toArray();
+    },
+    }));
+    </code></pre>
+    <img src="https://files.f8.edu.vn/f8-prod/blog_posts/13485/section_4_260323080825_69c0928991e952.37228671.png" alt="Zustand store kết hợp ES2025 Set union và Iterator Helpers - ít code hơn, dễ đọc hơn" width="800px">
+    <p>Pattern này cho phép bạn:</p>
+    <ul>
+        <li>Không duplicate symbol khi user thêm subscription nhiều lần (Set.union)</li>
+        <li>Không bị missed error khi WebSocket init fail sync (Promise.try)</li>
+        <li>Chỉ xử lý đúng 10 item cần thiết từ hàng nghìn price entries (Iterator.take)</li>
+    </ul>
+    <p>Bạn đã có đủ building blocks. Bước tiếp:</p>
+    <ol>
+        <li>Cài Node.js 22+ hoặc bật Chrome mới nhất để test native (không cần polyfill)</li>
+        <li>Thêm Zustand vào project React hiện tại, migrate một slice state nhỏ trước</li>
+        <li>Thử <code class="highlight">Iterator.from()</code> thay lodash chain trong một data transformation function</li>
+    </ol>
+    <p>Gặp vướng mắc ở phần nào, drop comment xuống dưới - mình đọc hết.</p>
 
+    <h3 class="PostsWithSameAuthor-module__heading___DZmFC">Bài đăng cùng tác giả</h3>
+    <ul>
+        <li><a class="bai-dang-cung-tac-gia" href="https://f8.edu.vn/blog/xu-huong-thiet-ke-website-2026-ai-ca-nhan-hoa-va-tuong-tac-3d-dinh-cao">Thiết Kế Web 2026: AI Cá Nhân Hóa & 3D Tương Tác Thực Chiến</a></li>
+        <li><a class="bai-dang-cung-tac-gia" href="https://f8.edu.vn/blog/ai-dang-thay-doi-phat-trien-web-2026-tu-copilot-den-chatbot-tu-dong">AI Code Thay Developer? Sự Thật Từ Copilot Đến Chatbot</a></li>
+        <li><a class="bai-dang-cung-tac-gia" href="https://f8.edu.vn/blog/cap-nhat-google-core-february-2026-toi-uu-discover-cho-developer-viet">Google Core Feb 2026: Discover Ưu Tiên Site Việt Thế Nào?</a></li>
+        <li><a class="bai-dang-cung-tac-gia" href="https://f8.edu.vn/blog/progressive-web-apps-pwa-2026-xay-dung-app-web-sieu-nhanh-cho-mobile-viet">PWA 2026: App Web Nhanh Như Native, Chi Phí Chỉ 1/3</a></li>
+        <li><a class="bai-dang-cung-tac-gia" href="https://f8.edu.vn/blog/motion-ui-micro-interactions-bi-quyet-giu-chan-nguoi-dung-tren-web-2026">Motion UI giữ chân user: CSS/GSAP thực chiến 2026</a></li>
+    </ul>
 
 
 
