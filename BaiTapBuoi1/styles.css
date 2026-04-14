@@ -5,3 +5,14 @@ body{
 .highlight{
     background-color: #c9fffc;
 }
+
+.ban-so-sanh-thuc-te{
+    width: 80%;
+    border-collapse: collapse;
+}
+
+.ban-so-sanh-thuc-te td{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}

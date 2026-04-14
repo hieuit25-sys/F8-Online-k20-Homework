@@ -121,6 +121,85 @@
     <h2 style="color: #292929;">RxJS vs Zustand - chọn gì cho realtime web app?</h2>
     <p>Mình sẽ không nói "cái nào tốt hơn" vì câu trả lời phụ thuộc vào loại app bạn đang build.</p>
     <p><strong>RxJS</strong> &#10088;<a href="https://rxjs.dev/">RxJS docs</a> &#10089; là reactive programming library với Observable - phù hợp khi data flow của bạn phức tạp, nhiều nguồn, cần backpressure hay timing control:</p>
+    <pre><code class="language-javascript">
+    import { fromEvent, Subject } from 'rxjs';
+    import { debounceTime, scan, filter } from 'rxjs/operators';
+
+    const socket = new WebSocket('wss://api.example.com/live');
+
+    // Stream WebSocket messages, debounce 300ms, accumulate
+    const liveData$ = fromEvent(socket, 'message').pipe(
+    debounceTime(300),
+    filter(event => event.data !== 'ping'),
+    scan((acc, event) => [...acc.slice(-99), JSON.parse(event.data)], []),
+    );
+
+    liveData$.subscribe(messages => updateDashboard(messages));
+    </code></pre>
+    <p><strong>Zustand</strong> &#10088;<a href="https://github.com/pmndrs/zustand">Zustand GitHub</a> &#10089; đi theo hướng ngược lại - minimal, hooks-based, không boilerplate:</p>
+    <pre><code class="language-javascript">
+    import { create } from 'zustand';
+
+    const useChatStore = create((set, get) => ({
+    messages: [],
+    connected: false,
+    
+    // ES2025 Promise.try trong action
+    connectSocket: async (url) => {
+        await Promise.try(async () => {
+        const ws = new WebSocket(url);
+        set({ connected: true });
+        
+        ws.onmessage = (e) => set(state => ({
+            messages: [...state.messages, JSON.parse(e.data)]
+        }));
+        });
+    },
+    }));
+
+    // Trong component
+    function ChatApp() {
+    const { messages, connectSocket } = useChatStore();
+    // ...
+    }
+    </code></pre>
+    <img src="https://files.f8.edu.vn/f8-prod/blog_posts/13485/section_3_260323080755_69c0926b837010.27943991.png" alt="RxJS cho stream phức tạp, Zustand cho React app state - chọn đúng tool cho đúng bài toán" width="800px">
+    <p><i>RxJS cho stream phức tạp, Zustand cho React app state - chọn đúng tool cho đúng bài toán</i>  </p>
+    <p>Bảng so sánh thực tế:</p>
+    <table class="ban-so-sanh-thuc-te">
+        <tr>
+            <td>Tiêu chí</td>
+            <td>RxJS v8.x</td>
+            <td>Zustand v5.x</td>
+        </tr>
+        <tr>
+            <td>Bundle size</td>
+            <td>~50KB</td>
+            <td>&lt;2KB</td>
+        </tr>
+        <tr>
+            <td>Learning curve</td>
+            <td>Cao (marble diagrams)</td>
+            <td>Thấp</td>
+        </tr>
+        <tr>
+            <td>Phù hợp cho</td>
+            <td>Multiplayer, live feed, complex streams</td>
+            <td>React SPA, UI state</td>
+        </tr>
+        <tr>
+            <td>ES2025 synergy</td>
+            <td><pre><code class="highlight">Iterator.from(observable)</code></pre></td>
+            <td><pre><code class="highlight">Promise.try</code></pre> trong actions</td>
+        </tr>
+        <tr>
+            <td>TypeScript</td>
+            <td>Tốt</td>
+            <td>Rất tốt (generics cải thiện v5+)</td>
+        </tr>
+    </table>
+
+
 
 
 
