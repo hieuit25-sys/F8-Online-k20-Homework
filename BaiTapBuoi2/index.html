@@ -3,14 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="./styles.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-coy.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"/>z
 
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <a href="#">Logo</a>
+            <ul class="nav-link">
+                <li><a href="#">Latest</a></li>
+                <li><a href="#">AI</a></li>
+                <li><a href="#">Tech</a></li>
+                <li><a href="#">Apps</a></li>
+                <li><a href="#">Startup Stories</a></li>
+                <li><a href="#">Code Report</a></li>
+                <li><a href="#">Programing Roadmaps</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="lesson-wrapper">
+        <article class="lesson-container">
+            <h1>Style a Blog Post with CSS: beginner-friendly tutorial</h1>
+            <h2>
+                <span class="author">
+                    <a href="#">Written by Massa Medi</a>
+                    <time datetime="project-date" datetime="2025-01-5">January 5, 2025</time>
+                </span>
+            </h2>
+            <p>Styling a blog post is a fundamental skill for web developers. In this tutorial, we'll guide you through the process of creating a simple blog post using HTML and CSS. You'll learn how to apply font families, text colors, and adjust line height and spacing to enhance readability.</p>
+            <p>By the end of this tutorial, you'll have a well-styled blog post that you can use as a template for your own blog or website.</p>
+            <h2>Setting Up Your Workspace</h2>
+            <h2>Installing a Text Editor</h2>
+            <p>For this tutorial, we'll be using Visual Studio Code (VS Code), a free and popular code editor. Here's how you can install it:</p>
+            <ol>
+                <li>Go to the Visual Studio Code website and click the "Download" button.</li>
+                <li>Choose the version for your operating system (Windows, Mac, or Linux) and follow the installation instructions.</li>
+            </ol>
+            <p>Visual Studio Code is a powerful text editor that provides features like syntax highlighting, code completion, and integrated debugging, which will make your coding experience much more efficient.</p>
+            <h2>Creating Your Project Folder</h2>
+            <p>Next, let's create a dedicated folder to keep all your blog post files organized:</p>
+            <ol>
+                <li>Open your file explorer (Windows) or Finder (Mac).</li>
+                <li>Navigate to your Documents folder (or any other location you prefer).</li>
+                <li>Right-click in an empty space and select "New > Folder".</li>
+                <li>Name the folder "my-blog-post" and press Enter.</li>
+            </ol>
+            <p>Having a separate folder for your blog post project will help you stay organized and make it easier to manage your files.</p>
+            <h2>Opening Your Project in VS Code</h2>
+            <p>Now, let's open your project folder in VS Code:</p>
+            <ol>
+                <li>Open VS Code.</li>
+                <li>Click on "File" in the top menu, then select "Open Folder" (Windows) or "Open..." (Mac).</li>
+                <li>Find and select your "my-blog-post" folder, then click "Open".</li>
+            </ol>
+            <p>This will load your project folder in VS Code, allowing you to work on your blog post files.</p>
+            <h2>Creating Your Project Files</h2>
+            <p>Within your "my-blog-post" folder, we need to create two files: index.html and styles.css.</p>
+            <ol>
+                <li>In the VS Code file explorer, click the "New File" icon (it looks like a page with a + sign).</li>
+                <li>Name the file "index.html" and press Enter. This will be your main HTML file.</li>
+                <li>Click the "New File" icon again and name the file "styles.css". This will be your CSS file.</li>
+            </ol>
+            <p>The index.html file will contain the structure and content of your blog post, while the styles.css file will hold the styling rules.</p>
+            <h2>Building the HTML Structure</h2>
+            <h3>Step 1: Open Your HTML File</h3>
+            <p>In the VS Code file explorer, double-click the index.html file to open it in the editor.</p>
+            <h3>Step 2: Add the Basic HTML Structure</h3>
+            <p>Copy and paste the following code into your index.html file:</p>
+            <pre><code class="language-html">
+    &#x3C;!DOCTYPE html&#x3E;
+    &#x3C;html lang=&#x22;en&#x22;&#x3E;
+    &#x3C;head&#x3E;
+        &#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;
+        &#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;&#x3E;
+        &#x3C;title&#x3E;My Blog Post&#x3C;/title&#x3E;
+        &#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;styles.css&#x22;&#x3E;
+    &#x3C;/head&#x3E;
+    &#x3C;body&#x3E;
+        &#x3C;!-- We&#x27;ll add content here in the next step --&#x3E;
+    &#x3C;/body&#x3E;
+    &#x3C;/html&#x3E;
+            </code></pre>
+            <p>Let's break down the code:</p>
+            <ol>
+                <li><code class="html-tag">&#x3C;!DOCTYPE html&#x3E;</code>: Declares the document type as HTML5.</li>
+                <li><code class="html-tag">&#x3C;html lang=&#x22;en&#x22;&#x3E;</code>: The root element of the HTML page, specifying the language as English.</li>
+                <li><code class="html-tag">&#x3C;head&#x3E;</code>: Contains meta information about the document.</li>
+                <li><code class="html-tag">&#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;</code>: Sets the character encoding to UTF-8, which ensures that your website can display a wide range of characters correctly.</li>
+                <li><code class="html-tag">&#x3C;meta name=&#x22;viewport&#x22;...&#x3E;</code>: Ensures the page is responsive and adapts to different screen sizes.</li>
+                <li><code class="html-tag">&#x3C;title&#x3E;My Blog Post&#x3C;/title&#x3E;</code>: Sets the title of the webpage, which will be displayed in the browser's tab or window.</li>
+                <li><code class="html-tag">&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;</code>styles.css&#x22;&#x3E;: Links the CSS file (styles.css) to the HTML, allowing you to apply styles to your website.</li>
+                <li><code class="html-tag">&#x3C;body&#x3E;</code>: Contains the visible content of the webpage.</li>
+            </ol>
+        </article>
+    </div>
 
 
-
-
+    <!-- <script href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- https://youtu.be/j5JxkOwsceA?si=GebBHse7183KYcxM -->
 </body>
 </html>
