@@ -1,0 +1,170 @@
+/* Tất cả link trong menu điều hướng (kể cả submenu) có màu #1d4ed8 */
+.site-header a {
+    color: #1d4ed8;
+}
+
+/* Chỉ các mục menu cấp 1 (không tính submenu) có nền #f1f5f9 */
+.main-nav > ul > li > a {
+    background: #f1f5f9;
+}
+
+/* Đoạn văn đầu tiên ngay sau mỗi tiêu đề h2 trong nội dung bài viết có màu #64748b */
+h2 + p {
+    color: #64748b;
+}
+
+/* Tất cả đoạn văn nằm sau tiêu đề h2 (không cần liền kề) có màu #0f172a */
+h2 ~ p {
+    color: #0f172a;
+}
+
+/* Link tác giả trong phần thông tin bài viết có màu #f97316 */
+.post-meta a {
+    color: #f97316;
+}
+
+/* Bài viết có nền white */
+/* Khi di chuột vào bài viết, bài viết có nền #f8fafc */
+/* Bài viết nổi bật (có class featured) có nền #fefce8 */
+/* Khi di chuột vào bài viết, tiêu đề đổi màu #2563eb */
+.post {
+    background-color: white; 
+    &:hover {
+        background-color: #f8fafc;
+        .post-title {
+            color: #2563eb;
+        }
+    }
+    &.featured {
+        background-color: #fefce8;
+    }
+    
+}
+
+/* Tiêu đề bài viết có màu #0f172a */
+.post {
+    & .post-title{
+        color: #0f172a;
+    }
+}
+
+a:link {
+    color: #2563eb;
+}
+
+a:visited {
+    color: #9333ea;
+}
+
+a:hover {
+    color: #1e40af;
+}
+
+a:active {
+    color: #1e3a8a;
+}
+
+.btn.btn-primary {
+    background-color: #2563eb;
+    color: white;
+    &:hover{
+        background-color: #3b82f6;
+    }
+    &:active {
+        background-color: #1d4ed8;
+    }
+    &:disabled {
+        background-color: #94a3b8;
+        color: #cbd5e1;
+    }
+}
+
+.comparison-table {
+    & tbody tr:nth-child(odd) {
+        background-color: #f8fafc;
+    }
+    & tbody tr:nth-child(even) {
+        background-color: white;
+    }
+    & tr:first-child {
+        background-color: #0f172a;
+        color: white;
+    }
+    & tr:last-child {
+        background-color: #dbeafe;
+    }
+}
+
+.steps {
+    & li:first-child {
+        color: #16a34a;
+    }
+    & li:last-child {
+        color: #dc2626;
+    }
+    & li:nth-child(3) {
+        background-color: #fef3c7;
+    }
+}
+
+.sidebar {
+    & .widget:not(:last-child) {
+        background-color: white;
+    }
+}
+
+.lead {
+    &::first-line {
+        color: #0f172a;
+    }
+    &::first-letter {
+        color: #2563eb;
+    }
+}
+
+.quote::before {
+    content: '"';
+    color: #cbd5e1;
+}
+
+.feature-list li::marker {
+    color: #2563eb;
+}
+
+::selection {
+    background-color: #2563eb;
+    color: #0f172a;
+}
+
+.badge::before {
+    content: "";
+    background-color: #ef4444;
+}
+
+input {
+    background-color: #fffbeb;
+}
+
+a[href^="https://"] {
+    color: #2563eb;
+}
+
+a[href$=".pdf"] {
+    color: #ea580c;
+}
+
+[class*="btn"] {
+    background-color: #e2e8f0;
+}
+
+[lang^="vi"] {
+    color: #0f172a;
+}
+
+.comparison-table {
+    tbody {
+        tr[data-priority="high"] {
+            background-color: #fee2e2;
+        }
+    }
+}
