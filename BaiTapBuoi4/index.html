@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập buổi 4</title>
+
+    <style>
+      h1 {
+        color: #ffffff;
+        background-color: #e58625;
+        padding: 6px 0;
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Trung tâm cấu hình giao diện (Demo)</h1>
+    <div id="control-area">
+      <div class="radioButton-theme">
+        <p>Chọn giao diện (Theme):</p>
+        <input type="radio" name="theme" id="light" value="Light" />
+        <label for="light">Light</label>
+
+        <input type="radio" name="theme" id="dark" value="Dark" />
+        <label for="dark">Dark</label>
+      </div>
+
+      <div class="radioButton-color">
+        <p>Chọn màu chủ đạo (Color):</p>
+        <input type="radio" name="color" id="red" value="Red" />
+        <label for="red">Red</label>
+
+        <input type="radio" name="color" id="blue" value="Blue" />
+        <label for="blue">Blue</label>
+
+        <input type="radio" name="color" id="green" value="Green" />
+        <label for="green">Green</label>
+      </div>
+
+      <div class="radioButton-language">
+        <p>Chọn ngôn ngữ (Language):</p>
+        <input type="radio" name="language" id="vi" value="VI" />
+        <label for="vi">VI</label>
+
+        <input type="radio" name="language" id="en" value="EN" />
+        <label for="en">EN</label>
+      </div>
+
+      <div class="radioButton-options-checkbox">
+        <p>Tuỳ chọn bổ sung (Options - Checkbox):</p>
+        <input
+          type="checkbox"
+          name="options-checkbox"
+          id="advanced"
+          value="Advanced"
+        />
+        <label for="advanced">Hiển thị mô tả nâng cao</label>
+
+        <input
+          type="checkbox"
+          name="options-checkbox"
+          id="eco"
+          value="turnOn-Eco"
+        />
+        <label for="eco">Bật chế độ Eco</label>
+
+        <input
+          type="checkbox"
+          name="options-checkbox"
+          id="warning"
+          value="display-important-warnings"
+        />
+        <label for="warning">Hiển thị cảnh báo quan trọng</label>
+      </div>
+    </div>
+
+    <div id="result-area">
+      <div class="content-theme">
+        <p class="content-light">Theme Light: Giao diện sáng, chữ đen.</p>
+        <p class="content-dark">Theme Dark: Giao diện tối, chữ sáng.</p>
+      </div>
+    </div>
+  </body>
+</html>
