@@ -27,70 +27,117 @@
           color: #9ca3af;
         }
       }
+
+      #light:checked {
+        + label {
+          background: #fff8cc;
+          color: #8b5e00;
+        }
+      }
+      #light:checked ~ #content-area .content-theme .light {
+        background: #fff8cc;
+        color: #8b5e00;
+      }
+
+      #dark:checked {
+        + label {
+          background: #111827;
+          color: #f9fafb;
+        }
+      }
+      #dark:checked ~ #content-area .content-theme .dark {
+        background: #111827;
+        color: #f9fafb;
+      }
+
+      #red:checked {
+        + label {
+          background: #fee2e2;
+          color: #991b1b;
+        }
+      }
+      #red:checked ~ #content-area .content-color .Red {
+        background: #fee2e2;
+        color: #7f1d1d;
+      }
+
+      #blue:checked {
+        + label {
+          background: #dbeafe;
+          color: #1d4ed8;
+        }
+      }
+      #blue:checked ~ #content-area .content-color .Blue {
+        background: #dbeafe;
+        color: #1d4ed8;
+      }
+
+      #green:checked {
+        + label {
+          background: #dcfce7;
+          color: #166534;
+        }
+      }
+      #green:checked ~ #content-area .content-color .Green {
+        background: #dcfce7;
+        color: #166534;
+      }
     </style>
   </head>
   <body>
     <h1>Trung tâm cấu hình giao diện (Demo)</h1>
-    <div id="control-area">
-      <div class="radioButton-theme">
-        <p>Chọn giao diện (Theme):</p>
-        <input type="radio" name="theme" id="light" value="Light" />
-        <label for="light">Light</label>
 
-        <input type="radio" name="theme" id="dark" value="Dark" />
-        <label for="dark">Dark</label>
-      </div>
+    <p>Chọn giao diện (Theme):</p>
+    <input type="radio" name="theme" id="light" value="Light" />
+    <label for="light">Light</label>
 
-      <div class="radioButton-color">
-        <p>Chọn màu chủ đạo (Color):</p>
-        <input type="radio" name="color" id="red" value="Red" />
-        <label for="red">Red</label>
+    <input type="radio" name="theme" id="dark" value="Dark" />
+    <label for="dark">Dark</label>
 
-        <input type="radio" name="color" id="blue" value="Blue" />
-        <label for="blue">Blue</label>
+    <p>Chọn màu chủ đạo (Color):</p>
+    <input type="radio" name="color" id="red" value="Red" />
+    <label for="red">Red</label>
 
-        <input type="radio" name="color" id="green" value="Green" />
-        <label for="green">Green</label>
-      </div>
+    <input type="radio" name="color" id="blue" value="Blue" />
+    <label for="blue">Blue</label>
 
-      <div class="radioButton-language">
-        <p>Chọn ngôn ngữ (Language):</p>
-        <input type="radio" name="language" id="vi" value="VI" />
-        <label for="vi">VI</label>
+    <input type="radio" name="color" id="green" value="Green" />
+    <label for="green">Green</label>
 
-        <input type="radio" name="language" id="en" value="EN" />
-        <label for="en">EN</label>
-      </div>
+    <p>Chọn ngôn ngữ (Language):</p>
+    <input type="radio" name="language" id="vi" value="VI" />
+    <label for="vi">VI</label>
 
-      <div class="radioButton-options-checkbox">
-        <p>Tuỳ chọn bổ sung (Options - Checkbox):</p>
-        <input
-          type="checkbox"
-          name="options-checkbox"
-          id="advanced"
-          value="Advanced"
-        />
-        <label for="advanced">Hiển thị mô tả nâng cao</label>
+    <input type="radio" name="language" id="en" value="EN" />
+    <label for="en">EN</label>
 
-        <input
-          type="checkbox"
-          name="options-checkbox"
-          id="eco"
-          value="turnOn-Eco"
-        />
-        <label for="eco">Bật chế độ Eco</label>
+    <p>Tuỳ chọn bổ sung (Options - Checkbox):</p>
+    <input
+      type="checkbox"
+      name="options-checkbox"
+      id="advanced"
+      value="Advanced"
+    />
+    <label for="advanced">Hiển thị mô tả nâng cao</label>
 
-        <input
-          type="checkbox"
-          name="options-checkbox"
-          id="warning"
-          value="display-important-warnings"
-        />
-        <label for="warning">Hiển thị cảnh báo quan trọng</label>
-      </div>
-    </div>
+    <input
+      type="checkbox"
+      name="options-checkbox"
+      id="eco"
+      value="turnOn-Eco"
+    />
+    <label for="eco">Bật chế độ Eco</label>
+
+    <input
+      type="checkbox"
+      name="options-checkbox"
+      id="warning"
+      value="display-important-warnings"
+    />
+    <label for="warning">Hiển thị cảnh báo quan trọng</label>
 
     <div id="content-area">
+      /*-----------------------------*/
       <div class="content-theme">
         <p class="light">Theme Light: Giao diện sáng, chữ đen.</p>
         <p class="dark">Theme Dark: Giao diện tối, chữ sáng.</p>
