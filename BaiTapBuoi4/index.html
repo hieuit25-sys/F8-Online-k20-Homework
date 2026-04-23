@@ -12,6 +12,21 @@
         padding: 6px 0;
         font-size: 25px;
       }
+
+      label {
+        background: #eef2ff;
+        color: #4b5563;
+      }
+
+      /*> sẽ lấy thẻ con trực tiếp của cha, còn không để thì lấy hết thẻ con có trong cha*/
+      #content-area {
+        background: #f3f4f6;
+        color: #111827;
+        p {
+          background: #ffffff;
+          color: #9ca3af;
+        }
+      }
     </style>
   </head>
   <body>
@@ -75,10 +90,34 @@
       </div>
     </div>
 
-    <div id="result-area">
+    <div id="content-area">
       <div class="content-theme">
-        <p class="content-light">Theme Light: Giao diện sáng, chữ đen.</p>
-        <p class="content-dark">Theme Dark: Giao diện tối, chữ sáng.</p>
+        <p class="light">Theme Light: Giao diện sáng, chữ đen.</p>
+        <p class="dark">Theme Dark: Giao diện tối, chữ sáng.</p>
+      </div>
+
+      <div class="content-color">
+        <p class="Red">Màu Red: được nhấn mạnh khi chọn Red.</p>
+        <p class="Blue">Màu Blue: được nhấn mạnh khi chọn Blue.</p>
+        <p class="Green">Màu Green: được nhấn mạnh khi chọn Green.</p>
+      </div>
+
+      <div class="content-language">
+        <p class="lang-vi">[VI] Xin chào bạn! Khi chọn VI, dòng này rõ hơn.</p>
+        <p class="lang-en">[EN] Hello, world! Khi chọn EN, dòng này rõ hơn.</p>
+      </div>
+
+      <div class="content-options">
+        <p class="advanced">
+          Mô tả nâng cao: giải thích kỹ hơn về cách các lựa chọn đang ảnh hưởng
+          đến giao diện.
+        </p>
+        <p class="eco">
+          Chế độ Eco: mô phỏng trạng thái tiết kiệm tài nguyên cho giao diện.
+        </p>
+        <p class="warning">
+          Cảnh báo quan trọng: khu vực dùng để nhấn mạnh thông tin hệ thống.
+        </p>
       </div>
     </div>
   </body>
