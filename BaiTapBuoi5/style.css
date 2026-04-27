@@ -1,0 +1,47 @@
+.container {
+        position: relative;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+        & .title {
+          font-size: large;
+        }
+
+        & .square {
+          & .draw1 {
+            border-width: 2px;
+            border-color: #d56a56;
+            border-style: solid;
+            width: 100px;
+            height: 100px;
+          }
+          & p {
+            margin-top: 5px;
+          }
+        }
+
+        & .rectangle {
+          & .draw2 {
+            border-width: 2px;
+            border-color: #d56a56;
+            border-style: solid;
+            width: 100px;
+            height: 100px;
+          }
+          & p {
+            margin-top: 5px;
+          }
+        }
+
+        & .up-triangle {
+          & .draw3 {
+            border-width: 2px;
+            border-color: #d56a56;
+            border-style: solid;
+            width: 100px;
+            height: 100px;
+          }
+          & p {
+            margin-top: 5px;
+          }
+        }
+      }

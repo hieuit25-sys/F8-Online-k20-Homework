@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework Day 5 - Draw</title>
+    <style>
+      .container {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .title {
+        font-size: 20px;
+      }
+
+      .container .draw1,
+      .container .draw2,
+      .container .draw3 {
+        margin: 0 auto;
+      }
+
+      .container .square .draw1 {
+        border-width: 2px;
+        border-color: #d56a56;
+        border-style: solid;
+        width: 50px;
+        height: 50px;
+      }
+
+      .container p {
+        margin-top: 5px;
+        text-align: center;
+      }
+
+      .container > div {
+        display: inline-block;
+        margin-right: 30px;
+        vertical-align: bottom;
+        text-align: center;
+      }
+
+      .container .rectangle .draw2 {
+        border-width: 2px;
+        border-color: #1a14d0;
+        border-style: solid;
+        width: 100px;
+        height: 100px;
+      }
+
+      .container .up-triangle .draw3 {
+        border-width: 2px;
+        border-color: #14d07f;
+        border-style: solid;
+        width: 60px;
+        height: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="title"><strong>Các hình có thể tạo được với Border</strong></p>
+
+    <div class="container">
+      <div class="square">
+        <div class="draw1"></div>
+        <p>1. Hình vuông</p>
+      </div>
+      <div class="rectangle">
+        <div class="draw2"></div>
+        <p>2. Hình chữ nhật</p>
+      </div>
+      <div class="up-triangle">
+        <div class="draw3"></div>
+        <p>3. Tam giác lên</p>
+      </div>
+      <div class="down-triangle"></div>
+      <div class="left-triangle"></div>
+      <div class="right-triangle"></div>
+      <div class="trapezoid"></div>
+      <div class="wide-triangle"></div>
+      <div class="acute-triangle"></div>
+      <div class="right-triangle"></div>
+      <div class="right-arrow"></div>
+      <div class="left-arrow"></div>
+      <div class="ribbon"></div>
+      <div class="f8"></div>
+    </div>
+  </body>
+</html>
