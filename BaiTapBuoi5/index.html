@@ -18,14 +18,6 @@
         margin: 0 auto;
       }
 
-      .container .square .draw1 {
-        border-width: 2px;
-        border-color: #d56a56;
-        border-style: solid;
-        width: 50px;
-        height: 50px;
-      }
-
       .container p {
         margin-top: 5px;
         text-align: center;
@@ -38,19 +30,179 @@
         text-align: center;
       }
 
-      .container .rectangle .draw2 {
+      .container .square .draw1 {
         border-width: 2px;
-        border-color: #1a14d0;
+        border-color: #d56a56;
         border-style: solid;
         width: 100px;
         height: 100px;
       }
 
-      .container .up-triangle .draw3 {
+      .container .rectangle .draw2 {
         border-width: 2px;
-        border-color: #14d07f;
+        border-color: #1a14d0;
         border-style: solid;
-        width: 60px;
+        width: 200px;
+        height: 80px;
+      }
+
+      .container .up-triangle .draw3 {
+        border-top: 0;
+        border-right: 50px;
+        border-bottom: 100px;
+        border-left: 50px;
+        border-color: transparent transparent #14d07f transparent;
+        border-style: solid;
+        width: 0;
+      }
+
+      .container .down-triangle .draw4 {
+        border-top: 100px;
+        border-right: 50px;
+        border-bottom: 0;
+        border-left: 50px;
+        border-color: #f1a809 transparent transparent transparent;
+        border-style: solid;
+        width: 0;
+      }
+
+      .container .left-triangle .draw5 {
+        border-top: 50px;
+        border-right: 100px;
+        border-bottom:50px;
+        border-left: 0px;
+        border-color: transparent #14d07f transparent transparent;
+        border-style: solid;
+        width: 0;
+      }
+
+      .container .right-triangle .draw6 {
+        border-top: 50px;
+        border-right: 0;
+        border-bottom: 50px;
+        border-left: 100px;
+        border-color: transparent transparent transparent #ca8c04;
+        border-style: solid;
+        width: 0;
+      }
+
+      .container .trapezoid .draw7 {
+        border-top: 0px;
+        border-right: 40px;
+        border-bottom: 80px;
+        border-left: 40px;
+        border-color: transparent transparent #60b490 transparent;
+        border-style: solid;
+        width: 80px;
+      }
+
+      .container .wide-triangle .draw8 {
+        border-top: 0px;
+        border-right: 100px;
+        border-bottom: 70px;
+        border-left: 100px;
+        border-color: transparent transparent #27455e transparent;
+        border-style: solid;
+        width: 0;
+      }
+
+      .container .acute-triangle .draw9 {
+        border-top: 0px;
+        border-right: 30px;
+        border-bottom: 120px;
+        border-left: 30px;
+        border-color: transparent transparent #ac4e32 transparent;
+        border-style: solid;
+        width: 0;
+      }
+
+      .container .isosceles-triangle .draw10 {
+        border-top: 0px;
+        border-right: 50px;
+        border-bottom: 50px;
+        border-left: 50px;
+        border-color: transparent transparent #d16217 transparent;
+        border-style: solid;
+        width: 0;
+      }
+
+      .container .right-arrow .draw11 {
+        border-top: 40px;
+        border-right: 40px;
+        border-bottom: 40px;
+        border-left: 70px;
+        border-color: transparent transparent transparent #049777;
+        border-style: solid;
+        width: 0;
+      }
+
+      .container .left-arrow .draw12 {
+        border-top: 40px;
+        border-right: 70px;
+        border-bottom: 40px;
+        border-left: 40px;
+        border-color: transparent #9d2eac transparent transparent;
+        border-style: solid;
+        width: 0;
+      }
+
+      .container .ribbon-flag .draw13 {
+        border-top: 40px;
+        border-right: 35px;
+        border-bottom: 40px;
+        border-left: 95px;
+        border-color: #f06102 transparent #f06102 #f06102;
+        border-style: solid;
+        width: 0;
+      }
+
+
+      .f8-position1, .f8-position2 {
+        display: inline-block;
+        margin-right: 30px;
+      }
+
+      .container .f8-letter .f8-position1 .draw14 {
+        border-top: 35px;
+        border-right: 0;
+        border-bottom: 35px;
+        border-left: 35px;
+        border-color: #d56a56;
+        border-style: solid;
+        width: 100px;
+        height: 60px;
+      }
+
+      .container .f8-letter .f8-position1 .draw15 {
+        border-top: 0px;
+        border-right: 0;
+        border-bottom: 0px;
+        border-left: 35px;
+        border-color: #d56a56;
+        border-style: solid;
+        width: 100px;
+        height: 100px;
+      }
+
+      .container .f8-letter .f8-position2 .draw16 {
+        border-top: 30px;
+        border-right: 30px;
+        border-bottom: 35px;
+        border-left: 30px;
+        border-color: #d56a56;
+        border-style: solid;
+        width: 70px;
+        height: 60px;
+      }
+
+      .container .f8-letter .f8-position2 .draw17 {
+        border-top: 10px;
+        border-right: 30px;
+        border-bottom: 35px;
+        border-left: 30px;
+        border-color: #d56a56;
+        border-style: solid;
+        width: 70px;
         height: 60px;
       }
     </style>
@@ -63,25 +215,78 @@
         <div class="draw1"></div>
         <p>1. Hình vuông</p>
       </div>
+
       <div class="rectangle">
         <div class="draw2"></div>
         <p>2. Hình chữ nhật</p>
       </div>
+
       <div class="up-triangle">
         <div class="draw3"></div>
         <p>3. Tam giác lên</p>
       </div>
-      <div class="down-triangle"></div>
-      <div class="left-triangle"></div>
-      <div class="right-triangle"></div>
-      <div class="trapezoid"></div>
-      <div class="wide-triangle"></div>
-      <div class="acute-triangle"></div>
-      <div class="right-triangle"></div>
-      <div class="right-arrow"></div>
-      <div class="left-arrow"></div>
-      <div class="ribbon"></div>
-      <div class="f8"></div>
+
+      <div class="down-triangle">
+        <div class="draw4"></div>
+        <p>4. Tam giác xuống</p>
+      </div>
+
+      <div class="left-triangle">
+        <div class="draw5"></div>
+        <p>5. Tam giác trái</p>
+      </div>
+
+      <div class="right-triangle">
+        <div class="draw6"></div>
+        <p>6. Tam giác phai</p>
+      </div>
+
+      <div class="trapezoid">
+        <div class="draw7"></div>
+        <p>7. Hinh thang</p>
+      </div>
+
+      <div class="wide-triangle">
+        <div class="draw8"></div>
+        <p>8. Tam giác rộng</p>
+      </div>
+
+      <div class="acute-triangle">
+        <div class="draw9"></div>
+        <p>9. Tam giác nhọn</p>
+      </div>
+
+      <div class="isosceles-triangle">
+        <div class="draw10"></div>
+        <p>10. Tam giác cân</p>
+      </div>
+
+      <div class="right-arrow">
+        <div class="draw11"></div>
+        <p>11. Mũi tên phải</p>
+      </div>
+
+      <div class="left-arrow">
+        <div class="draw12"></div>
+        <p>12. Mũi tên trái</p>
+      </div>
+
+      <div class="ribbon-flag">
+        <div class="draw13"></div>
+        <p>13. Ribbob/Lá cờ</p>
+      </div>
+
+      <div class="f8-letter">
+        <div class="f8-position1">
+          <div class="draw14"></div>
+          <div class="draw15"></div>
+        </div>
+        <div class="f8-position2">
+          <div class="draw16"></div>
+          <div class="draw17"></div>
+        </div>
+        <p>14. F8</p>
+      </div>
     </div>
   </body>
 </html>
