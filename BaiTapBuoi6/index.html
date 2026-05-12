@@ -1,47 +1,262 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Hiếu Nguyễn</title>
+    <link rel="stylesheet" href="/BaiTapBuoi6/css/style.css" />
+    <title>Portfolio HieuNguyen</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
   </head>
-  <body>
-    <section id="nav-bar">
+  <body id="top">
+    <!-- Tạo thanh navbar -->
+    <section id="header">
       <nav>
         <div class="logo">LOGO</div>
         <div class="nav-menu">
           <ul class="list">
-            <a href="#">
+            <a href="/BaiTapBuoi6/index.html">
               <li>Home</li>
             </a>
-            <a
-              href="D:\hieu\F8-Online\F8-Online-k20-Homework\BaiTapBuoi6\pages\about.html"
-            >
+            <a href="/BaiTapBuoi6/pages/about.html">
               <li>About</li>
             </a>
-            <a
-              href="D:\hieu\F8-Online\F8-Online-k20-Homework\BaiTapBuoi6\pages\skills.html"
-            >
+            <a href="/BaiTapBuoi6/pages/skills.html">
               <li>Skills</li>
             </a>
-            <a
-              href="D:\hieu\F8-Online\F8-Online-k20-Homework\BaiTapBuoi6\pages\projects.html"
-            >
+            <a href="/BaiTapBuoi6/pages/projects.html">
               <li>Projects</li>
             </a>
-            <a
-              href="D:\hieu\F8-Online\F8-Online-k20-Homework\BaiTapBuoi6\pages\blog.html"
-            >
+            <a href="/BaiTapBuoi6/pages/blog.html">
               <li>Blog</li>
             </a>
-            <a
-              href="D:\hieu\F8-Online\F8-Online-k20-Homework\BaiTapBuoi6\pages\contact.html"
-            >
+            <a href="/BaiTapBuoi6/pages/contact.html">
               <li>Contact</li>
             </a>
           </ul>
         </div>
       </nav>
     </section>
+
+    <!-- Phần hiển thị thông tin chính -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="video-background">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            poster="/BaiTapBuoi6/images/poster_hero_bg.png"
+            controls
+            height="100%"
+            width="100%"
+          >
+            <source
+              src="/BaiTapBuoi6/videos/video_hero_bg.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support video.
+          </video>
+        </div>
+
+        <div class="hero-content">
+          <h1>I'm HieuNguyen</h1>
+          <em>Passionate about Technology and Finance</em>
+          <a class="btn-projects" href="/BaiTapBuoi6/pages/projects.html"
+            >See Projects</a
+          >
+          <a
+            class="btn-download-CV"
+            href="/BaiTapBuoi6/files/Nguyễn Dương Thanh Hiếu - CV thực tập.pdf"
+            download="CV_NguyenDuongThanhHieu"
+            >Download CV</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <div class="about-preview-container">
+      <div class="about-preview-header">
+        <h2>About Preview</h2>
+      </div>
+
+      <div class="about-preview-content">
+        <img
+          src="/BaiTapBuoi6/images/avatar.jpg"
+          alt="avatar"
+          height="auto"
+          width="300px"
+        />
+        <p>
+          Besides programming, I'm also interested in <mark>finance</mark> and
+          <mark>personal growth</mark>. I believe
+          <strong>consistency, curiosity, and creativity</strong> are important
+          keys to becoming a
+          <em>better developer and creating meaningful products</em> in the
+          future.
+        </p>
+        <a class="btn-read-more" href="/BaiTapBuoi6/pages/about.html"
+          >Read more</a
+        >
+      </div>
+    </div>
+
+    <div class="skills-preview-container">
+      <div class="skill-preview-header">
+        <h2>Skills Preview</h2>
+        <p>
+          Here are some technologies and tools I’ve been learning and using to
+          build modern web applications and user-friendly interfaces.
+        </p>
+      </div>
+
+      <div class="skill-list">
+        <div class="skill-card">
+          <img
+            src="/BaiTapBuoi6/images/skill-html1.jpg"
+            alt="Image HTML, CSS, JavaScript"
+          />
+          <h3>HTML, CS, JavaScript</h3>
+          <p>
+            <strong>HTML:</strong> Used to build a clean and meaningful web page
+            structure.
+          </p>
+          <p>
+            <strong>CSS:</strong> Creating responsive and modern user
+            interfaces.
+          </p>
+          <p>
+            J<strong>avaScript:</strong> Adding interactivity and dynamic
+            behaviors.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <img
+            src="/BaiTapBuoi6/images/skill-reactjs.png"
+            alt="Image ReactJS"
+          />
+          <h3>ReactJS</h3>
+          <p>Developing reusable and interactive UI components.</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="/BaiTapBuoi6/images/skill-git.png" alt="image git" />
+          <h3>Git</h3>
+          <p>
+            Managing source code, tracking changes, and collaborating
+            efficiently using Git and GitHub.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <img
+            src="/BaiTapBuoi6/images/skill-sqlserver.png"
+            alt="Image SQLServer"
+          />
+          <h3>Microsoft SQL Server</h3>
+          <p>
+            Using SQL Server to design databases, write queries, and manage
+            structured data effectively.
+          </p>
+        </div>
+
+        <div class="btn-skill-preview">
+          <a class="btn-see-more" href="/BaiTapBuoi6/pages/skills.html"
+            >See more Skills</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-preview-container">
+      <div class="projects-preview-header">
+        <h2>Projects Preview</h2>
+      </div>
+      <div class="projects-list">
+        <div class="projects-card">
+          <img
+            src="/BaiTapBuoi6/images/didyou.jpg"
+            alt="Image thumnail web project for managing rental rooms"
+            width="300px"
+            height="auto"
+          />
+          <h3>Quan ly phong tro TANA</h3>
+          <p>Mô tả ngắn</p>
+          <p>Công nghệ sử dụng (dùng thẻ code cho tên công nghệ)</p>
+          <!--Sẽ đổi tên class -->
+          <a class="btn-see-more" href="/BaiTapBuoi6/pages/projects.html"
+            >See details</a
+          >
+        </div>
+
+        <div class="projects-card">
+          <img
+            src="/BaiTapBuoi6/images/helloword.jpg"
+            alt="Image thumnail web project for managing rental rooms"
+            width="300px"
+            height="auto"
+          />
+          <h3>Truyen file trong mang LAN</h3>
+          <p>Mô tả ngắn</p>
+          <p>Công nghệ sử dụng (dùng thẻ code cho tên công nghệ)</p>
+          <!--Sẽ đổi tên class -->
+          <a class="btn-see-more" href="/BaiTapBuoi6/pages/projects.html"
+            >See details</a
+          >
+        </div>
+
+        <div class="projects-card">
+          <img
+            src="/BaiTapBuoi6/images/system32.jpg"
+            alt="Image thumnail web project for managing rental rooms"
+            width="300px"
+            height="auto"
+          />
+          <h3>Lineup CS2</h3>
+          <p>Mô tả ngắn</p>
+          <p>Công nghệ sử dụng (dùng thẻ code cho tên công nghệ)</p>
+          <!--Sẽ đổi tên class -->
+          <a class="btn-see-more" href="/BaiTapBuoi6/pages/projects.html"
+            >See details</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <!-- COPYRIGHT -->
+      <p>© 2026 Hieu Nguyen. All rights reserved.</p>
+
+      <!-- SOCIAL MEDIA -->
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="https://instagram.com" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://twitter.com" target="_blank">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+        <a href="https://github.com" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a href="https://linkedin.com" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+
+      <!-- BACK TO TOP -->
+      <a href="#top" class="back-to-top"> Lên đầu trang ↑ </a>
+    </footer>
   </body>
 </html>
