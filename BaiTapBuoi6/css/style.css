@@ -1,4 +1,9 @@
-
+footer {
+    background-color: #76b6ff;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
 
 .btn-projects {
     display: inline-block;

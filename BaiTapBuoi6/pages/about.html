@@ -1,11 +1,18 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Nguyễn Hiếu</title>
+    <link rel="stylesheet" href="/BaiTapBuoi6/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    
+
   </head>
-  <body>
+  <body id="top">
     <section id="nav-bar">
       <nav>
         <div class="logo">LOGO</div>
@@ -33,6 +40,138 @@
         </div>
       </nav>
     </section>
-    <h1>About</h1>
+    
+    <div class="about-container">
+      <div class="content">
+        <h2>About</h2>
+        <img
+          src="/BaiTapBuoi6/images/avatar-about.JPG"
+          alt="Avatar"
+          class="avatar"
+          width="100%"
+          height="100%"
+        />
+        <!-- Không biết là em đặt h1 sau h2 có ảnh hưởng gì về sematic với SEO không nhỉ-->
+        <h1>Introduce myself</h1>
+        <p>
+          Hi! My name is <strong>Nguyen Hieu</strong>, and <em>I am a programmer passionate about technology and software development.</em>
+          With experience in this field, I have had the opportunity to work on many diverse projects, from web applications to mobile applications.
+          I am always looking for new challenges to develop my skills and contribute to the technology community.
+          I am excited to continue learning and growing in this field, and I look forward to <mark>connecting with other professionals</mark> and <mark>sharing my knowledge and experience.</mark>
+          I always aim for long-term goals and always master core skills such as <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>, and <abbr title="JavaScript">JS</abbr>.
+        </p>
+
+        <div class="about-favorite-quote">
+          <p>My favorite quote is:</p>
+          <blockquote cite="https://www.amazon.com/Your-Network-Net-Worth-Connections/dp/145168875X">
+            <q>Your network is your net worth.</q> - <cite>Porter Gale</cite>
+          </blockquote  >
+        </div>
+
+        <section class="timeline">
+          <h2>Education & Experience</h2>
+          <articale> <!-- Note: "Articale này thông tin không có thật" -->
+            <time datetime="2026 - 2029">2026 - 2029</time>
+            <h3>Fullstack Web Development at Big 4</h3>
+            <del>Position: Intern Frontend Web Development</del>
+            <ins>Position: Fullstack Web Development</ins>
+          </articale>
+          <hr />
+
+          <acticale class="timeline-item">
+            <time datetime="2026">2026</time>
+            <h3>F8 Fullstack Web</h3>
+            <p>Course: Fullstack Web Development</p>
+          </acticale>
+          <hr />
+
+          <acticale class="timeline-item">
+            <time datetime="2022 - 2026">2022 - 2026</time>
+            <h3>VanHien University</h3>
+            <p>Major: Infomation Security</p>
+          </acticale>
+    
+          <hr />
+          <acticale class="timeline-item">
+            <time datetime="2025">2025</time>
+            <h3>Automation n8n</h3>
+            <p>Create a custom workflow using n8n.</p>
+          </acticale>
+        </section>
+
+        <section>
+          <h2>Hobby</h2>
+          <div class="hobby-list">
+            <ul>
+              <li>
+                <i data-lucide="dumbbell"></i>
+                <h3>Fitness</h3>
+                <p>I enjoy going to the gym and staying active. Fitness helps me maintain a healthy lifestyle and boosts my energy levels.</p>
+              </li>
+
+              <li>
+                <i data-lucide="bike"></i>
+                <h3>Biking</h3>
+                <p>I love riding my bike and exploring new trails. It's a great way to stay fit and enjoy the outdoors.</p>
+              </li>
+
+              <li>
+                <i data-lucide="utensils"></i>
+                <h3>Cooking</h3>
+                <p>I love cooking and trying out new recipes. It's a great way to relax and create something delicious.</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="introduction-video">
+          <h2>Introduction Video</h2>
+          <iframe width="560" height="315" 
+          src="https://www.youtube.com/embed/e0PkXP7hIMk?si=zZDTsJh146hKcWLe" 
+          title="YouTube video player" frameborder="0" allow="accelerometer; 
+          autoplay; clipboard-write; encrypted-media; gyroscope; 
+          picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen 
+          controls></iframe>
+        </div>
+      </div>
+    </div>  
+
+
+
+    <footer>
+      <p>© 2026 Hieu Nguyen. All rights reserved.</p>
+
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="https://instagram.com" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://twitter.com" target="_blank">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+        <a href="https://github.com" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a href="https://linkedin.com" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+
+      <!-- BACK TO TOP -->
+      <a href="#top" class="back-to-top"> Lên đầu trang ↑ </a>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
   </body>
 </html>
