@@ -33,6 +33,81 @@
         </div>
       </nav>
     </section>
-    <h1>Contact</h1>
+    <main>
+      <section>
+        <h2>Contact</h2>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Basic Infomation</legend>
+            <div>
+              <div>
+                <label for="fullname">Full name:</label>
+                <input type="text" id="fullname" name="fullname" required minlength="2" maxlength="100" />
+              </div>
+
+              <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div>
+                <label for="phone">Phone number:</label>
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10,11}" />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Subject</legend>
+            <div>
+              <label for="topic">Select topic</label>
+              <select id="topic" name="topic" required>
+                <option value="">---Select topic---</option>
+                <option value="project">Project Inquiry</option>
+                <option value="cooperation">Cooperation</option>
+                <option value="recruitment">Recruitment</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Priority Level</legend>
+            <div>
+              <input type="radio" id="low" name="priority" value="low" required />
+              <label for="low">Low</label>
+            </div>
+            <div>
+              <input type="radio" id="medium" name="priority" value="medium" required />
+              <label for="medium">Medium</label>
+            </div>
+            <div>
+              <input type="radio" id="high" name="priority" value="high" required />
+              <label for="high">High</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Interested Services</legend>
+            <div>
+              <input type="checkbox" id="web-development" name="services" value="web-development" required />
+              <label for="web-development">Web Development</label>
+            </div>
+            <div>
+              <input type="checkbox" id="mobile-app" name="services" value="mobile-app" required />
+              <label for="mobile-app">Mobile App</label>
+            </div>
+            <div>
+              <input type="checkbox" id="uiux-design" name="services" value="uiux-design" required />
+              <label for="uiux-design">UI/UX Design</label>
+            </div>
+            <div>
+              <input type="checkbox" id="consulting" name="services" value="consulting" required />
+              <label for="consulting">Consulting</label>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
   </body>
 </html>
