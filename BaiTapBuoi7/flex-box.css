@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+.default {
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
+    display: flex;
+
+    .box {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 1.5;
+    }
+    .box1 {
+    border: 3px solid red;
+    }
+
+    .box2 {
+        border: 3px solid green;
+    }
+
+    .box3 {
+        border: 3px solid blue;
+    }
+}
+
+.container1 {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container2 {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .box1 {
+        order: 3;
+    }
+
+    .box2 {
+        order: 2;
+    }
+
+    .box3 {
+        order: 1;
+    }
+}
+
+.container3 {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    .box1 {
+        margin-bottom: 20px;
+    }
+
+    .box2 {
+        margin-bottom: 50px;
+    }
+}
+
+.container4 {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    .box1 {
+        margin-right: 10px;
+    }
+
+    .box2 {
+        margin-right: 40px;
+    }
+}
+
+.container5 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .box1 {
+        order: 3;
+    }
+    .box2 {
+        order: 2;
+    }
+    .box3 {
+        order: 1;
+    }
+}
+
+.container6 {
+    justify-content: space-between;
+}
+
+.container7 {
+    flex-direction: column;
+    align-items: center;
+
+    .box1 {
+        margin-bottom: 60px;
+    }
+
+    .box2 {
+        margin-bottom: 20px;
+    }
+}
+
+.container8 {
+    align-items: center;
+
+    .box2 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.container9 {
+    justify-content: center;
+    align-items: center;
+
+    .box1 {
+        margin-top: -100px;
+        margin-right: 20px;
+    }
+
+    .box3 {
+        margin-top: 100px;
+        margin-left: 20px;
+    }
+}
+
+.container10 {
+    flex-direction: column;
+
+    .box2 {
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .box3 {
+        margin-left: auto;
+    }
+}
