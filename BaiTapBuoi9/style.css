@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.item {
+    border: 3px solid #e0e0e0;
+    border-radius: 8px;
+
+    width: calc(100% - 40px) / 3;
+    height: 50px;
+}
