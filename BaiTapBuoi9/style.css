@@ -28,22 +28,72 @@
 .title {
     display: flex;
     flex-direction: row;
-
-    line-height: 1.3;
-
-    font-size: 20px;
+    align-items: center;
 
     gap: 10px;
 }
 
-.left i {
+i { 
     width: 60px;
     height: 60px;
     font-size: 32px;
+    color: #ffffff;
+
     background-color: #cbe40b;
     border-radius: 50%;
 
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.title p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+    line-height: 1.3;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.mdi-brush {
+    background-color: #ff6b6b;
+}
+
+.mdi-view-dashboard {
+    background-color: #4ecdc4;
+}
+
+.mdi-flash {
+    background-color: #f9a825;
+}
+
+.mdi-palette {
+    background-color: #5e9cff;
+}
+
+.mdi-layers {
+    background-color: #9b59b6;
+}
+
+.mdi-email {
+    background-color: #7cb342;
+}
+
+.desc {
+    font-size: 15px;
+    font-weight: 400;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+a {
+    font-style: 15px;
+    font-weight: 500;
+    color: #2196f3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
