@@ -21,7 +21,8 @@ body {
 
 .item {
     background: #ffffff;
-    border: 1px solid #e0e0e0;
+    border: 3px solid transparent;
+    transition: 0.27s;
     border-radius: 8px;
 
     flex-basis: calc((100% - 40px) / 3);
