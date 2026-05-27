@@ -21,6 +21,8 @@ body {
 
 .item {
     background: #ffffff;
+
+    /* cho viền 3px từ đầu và trong suốt từ đầu, để hover vào không bể layout */
     border: 3px solid transparent;
     transition: 0.27s;
     border-radius: 8px;
