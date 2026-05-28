@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    --width-heart: 100px;
+    --height-heart: 100px;
+    position: relative;
+    height: 100vh;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    animation: heart 2s infinite;
+}
+
+@keyframes heart {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 2;
+    }
+    100% {
+        scale: 1;
+    }
+}
+
+.diamond {
+    width: var(--width-heart);
+    height: var(--height-heart);
+    background-color: red;
+    transform: rotate(45deg);
+}
+
+.cirlce1 {
+    position: absolute;
+
+    background-color: red;
+
+    width: var(--width-heart);
+    height: var(--height-heart);
+    border-radius: 50%;
+
+    transform: translate(-35px, -135px);
+}
+
+.cirlce2 {
+    position: absolute;
+
+    background-color: red;
+
+    width: var(--width-heart);
+    height: var(--height-heart);
+    border-radius: 50%;
+
+    transform: translate(35px, -135px);
+}
+
+p {
+    position: absolute;
+
+    font-size: 26px;
+
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
