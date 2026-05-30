@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Be Vietnam Pro", sans-serif;
+
+    background-color: #e8e8e8;
+}
+
+.container { 
+    width: 100%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    background-color: #3a3a3a;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header__links {
+    display: flex;
+    gap: 20px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.mdi {
+    font-size: 2.8rem;
+    color: #fff;
+}
+
+.main {
+    padding: 20px 100px;
+
+    display: flex;
+    gap: 2rem;
+}
+
+.main__content {
+    flex: 2;
+}
+
+.main__content h1 {
+    margin-bottom: 20px;
+}
+
+.main__content p {
+    margin-bottom: 20px;
+}
+
+.main__sidebar {
+    color: #fff;
+    background-color: #3a3a3a;
+    padding: 10px 20px;
+    flex: 1;
+}
+
+.card {
+    display: flex;
+    gap: 1rem;
+
+    flex-wrap: wrap;
+}
+
+.card > div {
+    flex-basis: calc((100% - 2rem) / 3);
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+}
+
+.card__header {
+    background-color: #3a3a3a;
+    color: #fff;
+    padding: 20px;
+}
+
+.card__body {
+    background-color: #fff;
+    padding: 20px;
+}
