@@ -13,8 +13,11 @@
 </head>
 <body>
     <div class="container">
+        <input type="checkbox" id="menu-toggle" class="header__menu-toggle">
+
         <nav class="header">
-            <ul class="header__brand">
+
+            <ul class="header__logo">
                 <li><a href="#!">My Website</a></li>
             </ul>
             <ul class="header__links">
@@ -22,10 +25,28 @@
                 <li><a href="#!">Link 2</a></li>
                 <li><a href="#!">Link 3</a></li>
             </ul>
-            <ul>
-                <li><i class="mdi mdi-menu"></i></li>
-            </ul>
+
+            <label for="menu-toggle" class="header__menu-label">
+                <i class="mdi mdi-menu"></i>
+            </label>
         </nav>
+
+        <!-- Lớp phủ overlay -->
+        <label for="menu-toggle" class="mobile-menu__overlay"></label>
+
+        <!-- Sidebar cho menu tablet/mobile -->
+        <aside class="mobile-menu__sidebar">
+            <label for="menu-toggle" class="mobile-menu__close-btn">
+                <i class="mdi mdi-close"></i>
+            </label>
+
+            <ul class="mobile-menu__links">
+                <li><a href="#!">Link 1</a></li>
+                <li><a href="#!">Link 2</a></li>
+                <li><a href="#!">Link 3</a></li>
+            </ul>
+        </aside>
+
         <div class="main">
             <section class="main__content">
                 <h1>This is the main heading</h1>
