@@ -1,3 +1,16 @@
+:root {
+    --body-background: #e8e8e8;/**/
+    --card-background: white; /* nen cua card */
+    --card-border: #000; /* vien cua card */
+    --card-header-background: #3a3a3a;
+    --header-background: #3a3a3a; /*bg thanh navbar*/
+    --sidebar-background: #3a3a3a; /* sidebar ke ben content */
+    --text-header: #333; /* tieu de content */
+    --text-paragraph: #555;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,18 +25,19 @@ body {
     font-size: 1.6rem;
     font-family: "Be Vietnam Pro", sans-serif;
 
-    background-color: #e8e8e8;
+    background-color: var(--body-background);
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-
 /* Mặc định */
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
 
-    background-color: #3a3a3a;
+    background-color: var(--header-background);
 }
 
 .header__logo{
@@ -70,10 +84,13 @@ body {
 }
 
 .main__content h1 {
-    margin-bottom: 20px;
+    color: var(--text-header);
+    font-size: 2rem;
+    padding: 1rem 2rem;
 }
 
 .main__content p {
+    color: var(--text-paragraph);
     margin-bottom: 20px;
 }
 
@@ -81,15 +98,18 @@ body {
     width: 300px;
     min-height: 400px;
 
-    color: #fff;
-    background-color: #3a3a3a;
+    background-color: var(--sidebar-background);
     padding: 10px 20px;
     flex: 1;
 }
 
+.main__sidebar p {
+    color: white;
+}
+
 .card {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
 
     flex-wrap: wrap;
 }
@@ -98,17 +118,18 @@ body {
     flex-basis: calc((100% - 2rem) / 3);
     border-width: 3px;
     border-style: solid;
-    border-color: black;
+    border-color: var(--card-border);
 }
 
 .card__header {
-    background-color: #3a3a3a;
-    color: #fff;
+    font-size: 1.25rem;
+    background-color: var(--card-header-background);
+    color: white;
     padding: 20px;
 }
 
 .card__body {
-    background-color: #fff;
+    background-color: var(--card-background);
     padding: 20px;
 }
 
@@ -118,9 +139,9 @@ body {
     right: -300px;
     width: 300px;
     height: 100vh;
-    background-color: #3a3a3a;
+    background-color: var(--header-background);
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
-    color: #fff;
+    color: white;
     padding: 2rem;
 
     opacity: 0;
@@ -171,9 +192,54 @@ body {
     z-index: 998;
 }
 
+/* input cua darkmode */
+.header__dark-mode-toggle {
+    display: none;
+}
+
+.header__dark-mode-toggle:checked ~ .header .theme-toggle-icon::before {
+    content: "\F0599";
+}
+
+:root:has(.header__dark-mode-toggle:checked) {
+    --body-background: #1a1a1a;/**/
+    --card-background: #2a2a2a; /* nen cua card */
+    --card-border: #444; /* vien cua card */
+    --card-header-background: #1f1f1f;
+    --header-background: #0d0d0d; /*bg thanh navbar*/
+    --sidebar-background: #1f1f1f; /* sidebar ke ben content */
+    --text-header: #e0e0e0; /* tieu de content */
+    --text-paragraph: #b0b0b0;
+}
+
+/* label cua darkmode */
+.theme-toggle-icon::before {
+    content: "\F0594";
+    font-family: "Material Design Icons";
+
+    font-size: 2.4rem !important;
+    color: #fff;
+    padding: 0.5rem;
+
+    position: relative;
+    cursor: pointer;
+
+    user-select: none;
+
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-icon:hover::before {
+    transform: scale(1.1);
+}
+
 /* Tablet */
 @media (max-width: 768px) {
     .main {
+        padding: 1rem;
+    }
+
+    .main__content h1 {
         padding: 1rem;
     }
 
@@ -230,6 +296,10 @@ body {
 
 /* Mobile */
 @media (max-width: 480px) {
+    .main__content h1 {
+        font-size: 1.5rem;
+    }
+
     .container {
         max-width: 100%;
     }

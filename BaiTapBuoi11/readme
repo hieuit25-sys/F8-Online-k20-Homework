@@ -1,14 +1,50 @@
+--------------------------*=*--------------------------
+                       Hoan thanh
+--------------------------*=*--------------------------
+
 Hoàn thành những gì:
+
 - Xong layout desktop [xong]
 
 [1/6]
-- Xong responsive cho 3 thiet bi
 
+- Xong responsive cho 3 thiet bi [xong]
 
 Cần làm tiếp theo:
+
 - Responsive cho card và icon ẩn hiện [xong]
 
 [1/6]
-- Lam tiep 12.Typoraphy
-- Darkmode 
-- Chinh sua theo yeu cau cua de
+
+- Lam tiep 12.Typoraphy [xong]
+- Darkmode [xong]
+- Chinh sua theo yeu cau cua de [80%]
+
+Ghi chú:
+[Tối 1:05 02-06]
+
+- Đang gặp lỗi khi code dark-mode-toggle, không hiện thanh sidebar [xong]
+
+Light Mode (mặc định):
+
+Body background: #e8e8e8
+Card background: white
+Card border: #000
+Card header background: #3a3a3a
+Header background: #3a3a3a
+Sidebar background: #3a3a3a
+Text heading: #333
+Text paragraph: #555
+
+Dark Mode:
+
+Body background: #1a1a1a
+Card background: #2a2a2a
+Card border: #444
+Card header background: #1f1f1f
+Header background: #0d0d0d
+Sidebar background: #1f1f1f
+Navigation background: #0d0d0d
+Text heading: #e0e0e0
+Text paragraph: #b0b0b0
+Card body text: #b0b0b0

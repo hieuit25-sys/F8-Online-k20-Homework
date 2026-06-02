@@ -13,7 +13,11 @@
 </head>
 <body>
     <div class="container">
+        <!-- Checkbox ẩn để điều khiển menu -->
         <input type="checkbox" id="menu-toggle" class="header__menu-toggle">
+
+        <!-- Checkbox ẩn để điều khiển chế độ tối -->
+        <input type="checkbox" id="dark-mode-toggle" class="header__dark-mode-toggle">
 
         <nav class="header">
 
@@ -26,6 +30,12 @@
                 <li><a href="#!">Link 3</a></li>
             </ul>
 
+            <!-- Nút chuyển đổi chế độ tối -->
+            <label for="dark-mode-toggle" class="header__dark-mode-label">
+                <i class="mdi theme-toggle-icon"></i>
+            </label>
+
+            <!-- Nút mở menu cho tablet/mobile -->
             <label for="menu-toggle" class="header__menu-label">
                 <i class="mdi mdi-menu"></i>
             </label>
