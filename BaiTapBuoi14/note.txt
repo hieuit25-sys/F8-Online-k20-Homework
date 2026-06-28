@@ -1,0 +1,10 @@
+| Primitive Type (Kiểu nguyên thủy) | Reference Type (Kiểu tham chiếu) |
+| --------------------------------- | -------------------------------- |
+| Number                            | Object                           |
+| String                            | Array                            |
+| Boolean                           | Function                         |
+| Undefined                         | Date                             |
+| Null                              | Map                              |
+| Symbol                            | Set                              |
+| BigInt                            | ...                              |
+Bảng 1
