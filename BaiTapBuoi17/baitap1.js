@@ -8,7 +8,6 @@ function createSlug(text) {
 
 // Hàm 2
 function generateOrderId(productName, quantity) {
-  // ORD-[3 ký tự đầu tên sản phẩm viết hoa]-[quantity]-[độ dài tên sản phẩm]
   const firstThreeCharacter = productName.substr(0, 3);
   const upperCharacter = firstThreeCharacter.toUpperCase();
   const productNameLength = productName.length;
@@ -31,7 +30,12 @@ function formatPrice(price, currency) {
 
 // Hàm 4 Tạo URL đầy đủ cho trang sản phẩm dùng template literal.
 const baseUrl = "https://shop.vn";
-const product = { name: "Macbook Pro 2024", id: 101, category: "laptop" };
+const product = 
+{ 
+  name: "Macbook Pro 2024", 
+  id: 101, 
+  category: "laptop" 
+};
 // "https://shop.vn/laptop/macbook-pro-2024?id=101"
 
 function buildProductUrl(baseUrl, product) {
@@ -39,16 +43,16 @@ function buildProductUrl(baseUrl, product) {
   return `${baseUrl}/${product.category}/${slug}?id${product.id}`;
 }
 
-console.log(createSlug("MacBook Pro 2024")); // "macbook-pro-2024"
-console.log(createSlug("iPhone 15 Pro Max!!!")); // "iphone-15-pro-max"
-console.log(createSlug("Hello   World")); // "hello---world"
+console.log(createSlug("MacBook Pro 2024")); 
+console.log(createSlug("iPhone 15 Pro Max!!!")); 
+console.log(createSlug("Hello   World")); 
 
-console.log(generateOrderId("MacBook Pro", 2)); // "ORD-MAC-2-11"
-console.log(generateOrderId("iPhone 15", 5)); // "ORD-IPH-5-9"
+console.log(generateOrderId("MacBook Pro", 2)); 
+console.log(generateOrderId("iPhone 15", 5)); 
 
-console.log(formatPrice(2000000, "VND")); // "2.000.000 ₫"
-console.log(formatPrice(1500, "USD")); // "$1,500.00"
-console.log(formatPrice(300000, "VND")); // "300.000 ₫"
+console.log(formatPrice(2000000, "VND"));
+console.log(formatPrice(1500, "USD"));
+console.log(formatPrice(300000, "VND"));
 
 buildProductUrl("https://shop.vn", {
   name: "MacBook Pro 2024",
