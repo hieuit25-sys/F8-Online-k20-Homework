@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://open.spotify.com/favicon.ico"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="h-hdv flex flex-col">
+      <header
+        class="h-16 bg-[#000000] flex items-center justify-center px-6 select-none"
+      >
+        <!--left-->
+        <div class="flex-1 flex items-center">
+          <a href="/">
+            <img
+              src="/Spotify_Primary_Logo_RGB_White.png"
+              alt="Logo Spotify"
+              class="w-8 h-8"
+            />
+          </a>
+        </div>
+
+        <!--center-->
+        <div class="flex items-center justify-center gap-2">
+          <!--nút home-->
+          <button
+            type="button"
+            class="w-12 h-12 rounded-full bg-[#1f1f1f] text-[#b3b3b3] hover:text-white hover:bg-[#2a2a2a] hover:scale-104 active:scale-96 transition-all flex items-center justify-center cursor-pointer"
+            title="Home"
+          >
+            <i class="fi fi-sr-house-blank text-white text-xl leading-none"></i>
+          </button>
+
+          <!--search bar-->
+          <form
+            class="group w-118.5 h-12 rounded-full bg-[#1f1f1f] hover:bg-[#2828282] focus-within:bg-[#282828] focus-within:ring-2 focus-within:ring-white flex items-center px-3 transition-all"
+          >
+            <!--kính lúp-->
+            <button
+              type="button"
+              class="text-[#b3b3b3] flex items-center justify-center p-1 group-hover:text-white group-focus-within:text-white transition-colors cursor-pointer"
+              title="Search"
+            >
+              <i class="fi fi-rr-search text-[22px] leading-none"></i>
+            </button>
+
+            <!--tìm kiếm-->
+            <input
+              type="text"
+              placeholder="What do you want to play?"
+              class="flex-1 text-base px-2 w-full bg-transparent border-none outline-none text-white placeholder:text-[#b3b3b3] group-focus-within:placeholder:text-[#b3b3b3]"
+            />
+
+            <!--gạch dọc-->
+            <div class="h-6 w-px bg-[#7c7c7c] mx-2"></div>
+
+            <!--nút browse-->
+            <button
+              type="button"
+              class="text-[#b3b3b3] hover:text-white flex items-center justify-center p-2 transition-colors cursor-pointer"
+              title="Browse"
+            >
+              <i class="fi fi-rs-inbox text-[#b3b3b3] text-xl leading-none"></i>
+            </button>
+          </form>
+        </div>
+
+        <!--right Action-->
+        <div class="flex-1 flex items-center justify-end">
+          <!--Chưa đăng nhập-->
+          <div id="auth-guest" class="flex items-center justifu-end gap-4">
+            <a
+              href="#"
+              class="hidden md:inline-block text-[#b3b3b3] hover:text-white text-sm font-semibold tracking-wide transition-colors"
+              >Premium</a
+            >
+            <a
+              href="#"
+              class="hidden md:inline-block text-[#b3b3b3] hover:text-white text-sm font-semibold tracking-wide transition-colors"
+              >Support</a
+            >
+            <a
+              href="https://www.spotify.com/vn-vi/download/windows/"
+              class="hidden md:inline-block text-[#b3b3b3] hover:text-white text-sm font-semibold tracking-wide transition-colors"
+              target="blank"
+              >Download</a
+            >
+
+            <div class="hidden md:block h-7 w-px bg-white"></div>
+
+            <a
+              href="#signup"
+              class="text-[#b3b3b3] hover:text-white font-bold text-sm tracking-wide hover:scale-105 transition-all"
+              >Sign up</a
+            >
+            <a
+              href="#login"
+              class="bg-white text-black font-bold text-sm px-8 py-3 rounded-full hover:scale-105 active:scale-95 transition-all shadow-md"
+              >Log in</a
+            >
+          </div>
+
+          <!--Da dang nhap-->
+          <div id="auth-logged-in" class="hidden flex items-center gap-4">
+            <!--Nut Premium-->
+            <button
+              class="hidden sm:inline-block bg-white text-black text-xs font-bold px-4 py-2 rounded-full hover:scale-105 transition-tranform cur"
+            >
+              Explore Premium
+            </button>
+
+            <!--Nut Install-->
+            <button
+              class="flex items-center gap-1.5 text-xs font-bold text-white bg-[#0f0f0f0f] hover:bg-[#1a1a1a] px-3.5 py-1.5 rounded-full hover:scale-105 transition-all cursor-pointer"
+            >
+              <i class="fi fi-ss-download text-sm"></i>
+              <span>Install App</span>
+            </button>
+
+            <!--Nut Noti-->
+            <button
+              class="w-9 h-9 rounded-full bg-[#121212] text-[#b3b3b3] hover:text-white hover:scale-105 flex items-center justify-center transition-all cursor-pointer"
+              title="What's New"
+            >
+              <i class="fi fi-tc-bell text-sm leading-none"></i>
+            </button>
+
+            <!--Profile-->
+            <button
+              class="w-10 h-10 rounded-full bg-[#1f1f1f] p-1 border-2 border-transparent hover:scale-105 transition-all flex items-center justify-center overflow-hidden cursor-pointer"
+              title="Profile"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                alt="Avatar"
+                class="w-full h-full object-cover rounded-full"
+              />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="flex gap-2 flex-1">
+        <aside
+          class="w-87.75 h-[calc(100vh-64px)] bg-[#121212] rounded-lg flex flex-col justify-between p-2 select-none"
+        >
+          <!--Phần trên: header + playlist content (có thể cuộn lại)-->
+          <div class="flex-1 flex flex-col min-h-0">
+            <!--Header: library và nút Create-->
+            <div
+              class="flex items-center justify-between px-4 py-3 text-[#b3b3b3]"
+            >
+              <!--Library-->
+              <button
+                class="flex items-center gap-3 hover:text-white transition-colors cursor-pointer font-bold text-base"
+              >
+                <span class="text-white">Your Library</span>
+              </button>
+
+              <!--Nút Create-->
+              <button
+                class="flex items-center gap-2 px-4 py-2 rounded-full bg-[#1f1f1f] hover:bg-[#282828] text-white text-sm font-bold transition-all cursor-pointer"
+                title="Create a playlist, folder, or Jam"
+              >
+                <i
+                  class="fi fi-rr-plus text-[#b3b3b3] text-sm leading-none translate-y-[2px]"
+                ></i>
+                <span>Create</span>
+              </button>
+            </div>
+
+            <!--Content container-->
+            <div class="flex-1 overflow-y-auto px-2 py-2">
+              <!--Trạng thái guest-->
+              <div id="sidebar-guest" class="flex flex-col gap-4">
+                <!--card 1-->
+                <div class="bg-[#1f1f1f] p-4 rounded-lg flex flex-col gap-4">
+                  <div class="space-y-1">
+                    <h4 class="text-white font-bold text-sm">
+                      Create your first playlist
+                    </h4>
+                    <p class="text-[#b3b3b3] text-xs font-medium">
+                      It's easy, we'll help you
+                    </p>
+                  </div>
+                  <button
+                    class="seft-start bg-white text-black text-xs font-bold px-4 py-2 rounded-full hover:scale-105 active:scale-95 transition-tranform cursor-pointer"
+                  >
+                    Create playlist
+                  </button>
+                </div>
+
+                <!--card 2-->
+                <div class="bg-[#1f1f1f] p-4 rounded-lg flex flex-col gap-4">
+                  <div class="space-y-1">
+                    <h4 class="text-white font-bold text-sm">
+                      Let's find some podcasts to follow
+                    </h4>
+                    <p class="text-[#b3b3b3] text-xs font-medium">
+                      We'll keep you updated on new episodes
+                    </p>
+                  </div>
+                  <button
+                    class="seft-start bg-white text-black text-xs font-bold px-4 py-2 rounded-full hover:scale-105 active:scale-95 transition-tranform cursor-pointer"
+                  >
+                    Browse podcasts
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!--link & languge-->
+            <div class="px-4 pt-4 pb-2 flex flex-col gap-6">
+              <div
+                class="flex flex-wrap gap-x-4 gap-y-2 text-[11px] text-[#b3b3b3b3] font-medium"
+              >
+                <a href="#" class="hover:underline">Legal</a>
+                <a href="#" class="hover:underline">Safety & Privacy Center</a>
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Cookies</a>
+                <a href="#" class="hover:underline">About Ads</a>
+                <a href="#" class="hover:underline">Accessibility</a>
+                <a href="#" class="hover:underline">Cookies</a>
+              </div>
+
+              <!--nút English-->
+              <div>
+                <button
+                  class="border border-[#7c7c7c]/60 hover:border-white text-white text-xs font-bold px-3.5 py-1.5 rounded-full flex items-center gap-1.5 hover:scale-105 transition-all cursor-pointer"
+                >
+                  <i class="fi fi-rr-globe text-sm leading-none"></i>
+                  <span>English</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <main class="bg-gray-900 flex-1">main</main>
+      </div>
+      <div id="controls" class="h-22 bg-amber-300">Controls</div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
