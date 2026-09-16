@@ -21,5 +21,5 @@ function analyzeValue(value) {
         isReferenceType
     }
 }
-
+// truyền giá trị vào ngoặc xanh lá là ra kết quả
 console.log(analyzeValue('@'));

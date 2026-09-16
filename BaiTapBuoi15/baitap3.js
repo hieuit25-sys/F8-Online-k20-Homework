@@ -57,7 +57,8 @@ function analyzeClass(scores) {
       maxScore: null,
       minScore: null,
       averageScore: 0,
-      remark: "Không có dữ liệu hợp lệ",
+      remark: "Không có dữ liệu hợp lệ"
+
     };
   }
 
